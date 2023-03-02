@@ -14,11 +14,11 @@ class NotesDetailView(DetailView):
     context_object_name = 'note'
 
     
-def details(request, pk):
-    try:
-        note = Notes.objects.get(pk=pk)
-    except Notes.DoesNotExist:
-        raise Http404("Note does not exist")
-    return render(request, 'notes/notes_detail.html', {
-        'note': note
-    })
+# def details(request, pk):
+#     try:
+#         note = Notes.objects.get(pk=pk)
+#     except Notes.DoesNotExist:
+#         raise Http404("Note does not exist")
+#     return render(request, 'notes/notes_detail.html', {
+#         'note': note
+#     })
