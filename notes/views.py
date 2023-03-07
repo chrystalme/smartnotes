@@ -4,7 +4,10 @@ from django.views.generic import DetailView, ListView, CreateView, DeleteView, U
 from .forms import NotesForm
 from .models import Notes
 
-
+class NotesUpdateView(UpdateView):
+     model = Notes
+     form_class = NotesForm
+     success_url = '/smart/notes'
 class NotesCreateView(CreateView):
      model = Notes
      # fields = ['title', 'text']
