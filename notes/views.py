@@ -1,9 +1,15 @@
 from django.shortcuts import render
 from django.http import Http404
+from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView, CreateView, DeleteView, UpdateView
+# from django.views.generic.edit import DeleteView
 from .forms import NotesForm
 from .models import Notes
 
+class NotesDeleteView(DeleteView):
+     model = Notes
+     success_url = '/smart/notes'
+     template_name = 'notes/notes_delete.html'
 class NotesUpdateView(UpdateView):
      model = Notes
      form_class = NotesForm
